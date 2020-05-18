@@ -50,20 +50,3 @@ func IsNotExist(filename string) bool {
 	}
 	return false
 }
-
-//type Xml interface {
-//	SetLoaded()
-//	IsLoaded() bool
-//}
-//
-//type XmlDoc struct {
-//	state bool
-//	msg   *tgbotapi.MessageConfig
-//}
-//
-//func (r *XmlDoc) SetLoaded() {
-//	r.state = true
-//}
-//func (r XmlDoc) IsLoaded() bool {
-//	return r.state == true
-//}
