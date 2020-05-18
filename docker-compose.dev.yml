@@ -1,0 +1,7 @@
+version: "3"
+services:
+  bot:
+    environment:
+      - DEBUG=True
+      - PORT=5000
+      - USERDOMAIN=localhost

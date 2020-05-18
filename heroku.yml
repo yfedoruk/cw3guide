@@ -1,0 +1,7 @@
+build:
+  docker:
+    web: Dockerfile
+    worker:
+      dockerfile: Dockerfile
+run:
+  web: go run -p 5000:8080 quotebot

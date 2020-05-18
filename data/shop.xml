@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<title>🏠Лавка кузнеца/алхимика</title>
+	<body>
+		Для начала, нужно ввести команду
+		`/myshop`
+		`|`  _You do not own a shop yet. To create one click_ `/createshop`_. It will cost you 500💰_
+
+		Для создания собственной лавки нужно иметь 500💰 на руках и ввести команду
+		`/createshop`
+		`|`  The shop has been built, customize it with `/s_#_edit`
+
+		Теперь у вас есть собственная лавка. Теперь, чтобы изменить что-то в своей лавке, нажмите на `/s_#_edit` в сообщении.
+		`/s_#_edit`
+		`|`  Customize your *Shop #*
+		`|`  /s_#_help - usage
+		`|`  Offers *0/5*
+		`|`
+		`|`  🔕 Link: `/ws_#`
+		Собственно, это ваша лавка. Пока что она выглядит так. Нажимаем `/s_#_help`
+		Usage:
+		`/s_123_name` ‹name› set smithy name
+		`/s_123_pre` prefix with 'smithy'
+		`/s_123_post` postfix with 'smithy'
+		`/s_123_add` {recipeCode} {goldReward} add offer
+		`/s_123_pub` publish shop to digest
+		`/s_123_unpub` unpublish shop from digest
+		`/s_123_disc` {guild|castle} {amount} to make a discount for guild|castle mates.
+		`/s_123_reroll` pay 250💰 to get new random link
+
+		`/s_123_mntn` to toggle repair/reinforce in menu
+		`/s_123_m2g` {gold} per 100 used mana
+
+		`/enlargeshop` to enlarge rack up to the size of 10 (3💎, 5💎... you know the fib.)
+		`/mylink_{5 alphanumerics}` to a have beautiful link for as low as 89💎
+
+		`Команды`    /shop2
+	</body>
+</root>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<title>📚️ Свитки (Как точить)</title>
+	<body>
+		*Как заточить*
+		Снимаем вещь, которую хотим заточить, чтобы она попала в рюкзак. Проверить можно по команде `/inv`
+
+		`/inv`
+		`|`  🎽Экипировка +4⚔️+11🛡
+		`|`  Mithdril dagger +7⚔️ `/off_w17`
+		`|`  Kitchen knife +1⚔️ `/off_w13`
+		`|`  Leather hood +2🛡 `/off_a07`
+		`|`  Leather gloves +2🛡 `/off_a17`
+		`|`  Leather shirt +4🛡 `/off_a02`
+		`|`  Royal Guard Cape +1⚔️ +1🛡 `/off_a26`
+		`|`
+		`|`  🎒Рюкзак(3/15):
+		`|`  Short sword  +3⚔️ `/on_w02`
+		`|`  Leather shirt  +4🛡 `/on_a02`
+		`|`  Leather hood  +2🛡 `/on_a07`
+
+		`/off_w17`
+		`|`  Снят предмет: *Mithdril dagger*
+
+		2. Заходим в 🗃Другое (`/misc`), находим нужный свиток и нажимаем на команду возле него
+		`|`  🗃Другое
+		`|`  Wooden arrows pack (2) `/use_505`
+		`|`  Wrapping (11)
+		`|`  📕Scroll of Rage (2) `/use_s01`
+		`|`  `/use_s01`
+		`|`  You can try enchanting the following items:
+		`|`  Mithril gauntles +7⚔
+		`/enchant_w17_s01`
+		_Careful! Trying to enchant +3 items and higher is dangerous!_
+		_There is a chance to lose them forever._
+
+		3. Нажимаем на предложенную команду возле той вещи, *которую мы хотим заточить* и радуемся
+		`/enchant_w17_s01`
+		`|`  Enchantment was successful!
+
+		`Где взять      ` /scroll4
+		`Для чего нужны ` /scroll5
+		`Что точится    ` /scroll6
+
+		📚️ Свитки /scroll
+	</body>
+</root>
