@@ -55,15 +55,3 @@ func IsNotExist(filename string) bool {
 	}
 	return false
 }
-
-func ImagePath(filename string) string {
-	return env.BasePath() + filepath.FromSlash("/data/img/"+filename+".png")
-}
-
-func IsPhoto(command string) bool {
-	switch command {
-	case "herbsimg", "recipesimg":
-		return true
-	}
-	return false
-}
