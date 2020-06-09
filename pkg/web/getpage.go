@@ -33,6 +33,11 @@ func parse(filename string, r interface{}) {
 	file, err := os.Open(env.BasePath() + filepath.FromSlash("/data/"+filename+".xml"))
 	fail.Check(err)
 
+	defer func() {
+		var err = file.Close()
+		fail.Check(err)
+	}()
+
 	fi, err := file.Stat()
 	fail.Check(err)
 
@@ -46,6 +51,18 @@ func parse(filename string, r interface{}) {
 
 func IsNotExist(filename string) bool {
 	if _, err := os.Stat(env.BasePath() + filepath.FromSlash("/data/"+filename+".xml")); os.IsNotExist(err) {
+		return true
+	}
+	return false
+}
+
+func ImagePath(filename string) string {
+	return env.BasePath() + filepath.FromSlash("/data/img/"+filename+".png")
+}
+
+func IsPhoto(command string) bool {
+	switch command {
+	case "herbsimg", "recipesimg":
 		return true
 	}
 	return false

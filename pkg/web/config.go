@@ -17,6 +17,11 @@ func Token() string {
 	file, err := os.Open(env.BasePath() + filepath.FromSlash("/config.json"))
 	fail.Check(err)
 
+	defer func() {
+		var err = file.Close()
+		fail.Check(err)
+	}()
+
 	decoder := json.NewDecoder(file)
 	configuration := config{}
 

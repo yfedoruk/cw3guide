@@ -29,8 +29,27 @@ func (s *Server) Start() {
 		}
 	}()
 
+	var session map[int]string
+	session = make(map[int]string)
 	var fw = NewFlyweight()
 	for update := range updates {
+		if update.CallbackQuery != nil {
+			var command = update.CallbackQuery.Data
+
+			session[update.CallbackQuery.From.ID] = command
+
+			_, err := bot.AnswerCallbackQuery(tgbotapi.NewCallback(update.CallbackQuery.ID, update.CallbackQuery.Data))
+			fail.Check(err)
+
+			if IsPhoto(command) {
+				var msg = tgbotapi.NewPhotoUpload(update.CallbackQuery.Message.Chat.ID, ImagePath(command))
+				msg.MimeType = "image/png"
+				_, err := bot.Send(msg)
+				fail.Warning(err)
+				continue
+			}
+		}
+
 		if update.Message == nil {
 			continue
 		}
@@ -41,6 +60,10 @@ func (s *Server) Start() {
 		msg.Text = fw.GetPage(command)
 		msg.ParseMode = "markdown"
 		msg.DisableWebPagePreview = true
+
+		if command == "herbs" {
+			HerbsTables(&msg)
+		}
 
 		_, err := bot.Send(msg)
 		fail.Warning(err)
@@ -58,4 +81,16 @@ func NewServer() *Server {
 func MainHandler(resp http.ResponseWriter, _ *http.Request) {
 	_, err := resp.Write([]byte("Hi there! I'm Chat wars 3 guide bot!"))
 	fail.Check(err)
+}
+
+func HerbsTables(msg *tgbotapi.MessageConfig) {
+	var row []tgbotapi.InlineKeyboardButton
+
+	keyboard := tgbotapi.InlineKeyboardMarkup{}
+	btn1 := tgbotapi.NewInlineKeyboardButtonData("Таблица трав", "herbsimg")
+	btn2 := tgbotapi.NewInlineKeyboardButtonData("Таблица рецептов", "recipesimg")
+	row = append(row, tgbotapi.NewInlineKeyboardRow(btn1)...)
+	row = append(row, tgbotapi.NewInlineKeyboardRow(btn2)...)
+	keyboard.InlineKeyboard = append(keyboard.InlineKeyboard, row)
+	msg.ReplyMarkup = keyboard
 }
