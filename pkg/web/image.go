@@ -12,7 +12,7 @@ func ImagePath(filename string) string {
 
 func IsPhoto(command string) bool {
 	switch command {
-	case "herbsimg", "recipesimg", "glorypoint":
+	case "herbsimg", "recipestable", "glorypoint":
 		return true
 	}
 	return false
@@ -32,7 +32,7 @@ func HerbsTables(msg *tgbotapi.MessageConfig) {
 
 	keyboard := tgbotapi.InlineKeyboardMarkup{}
 	btn1 := tgbotapi.NewInlineKeyboardButtonData("Таблица трав", "herbsimg")
-	btn2 := tgbotapi.NewInlineKeyboardButtonData("Таблица рецептов", "recipesimg")
+	btn2 := tgbotapi.NewInlineKeyboardButtonData("Таблица рецептов", "recipestable")
 	row = append(row, tgbotapi.NewInlineKeyboardRow(btn1)...)
 	row = append(row, tgbotapi.NewInlineKeyboardRow(btn2)...)
 	keyboard.InlineKeyboard = append(keyboard.InlineKeyboard, row)
